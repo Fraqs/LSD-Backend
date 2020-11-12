@@ -1761,7 +1761,7 @@ content-type@~1.0.4:
 
 contract@Fraqs/LSD-Contract:
   version "1.0.0"
-  resolved "https://codeload.github.com/Fraqs/LSD-Contract/tar.gz/573860a328c3279c475dd5619de89a823e83cef1"
+  resolved "https://codeload.github.com/Fraqs/LSD-Contract/tar.gz/0556dadb5677336c01555c2e960f1acc41f73422"
   dependencies:
     moment-timezone "^0.5.31"
     typescript "^4.0.5"
