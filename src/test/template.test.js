@@ -1,5 +1,8 @@
 // api reference:: https://jestjs.io/docs/en/api
 
+// this is a custom assume test, it only runs when the condition is true
+const assume = (condition) => (condition ? it : it.skip);
+
 // example:: database population
 beforeEach(() => console.log('Running before each'));
 // example:: database reset
