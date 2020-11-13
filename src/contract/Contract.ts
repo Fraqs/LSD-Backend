@@ -8,7 +8,21 @@ import { IAirportDetail, IAirportIdentifier } from 'contract/src/dto/airport';
 
 export default class Contract implements IContract {
 	async reserveFlight(id: IFlightIdentifier, amountSeats: number): Promise<IReservationSummary> {
-		throw new Error('not implemented yet.');
+		// hardcoded example
+
+		// DTO Should be classes instead of interfaces due to this...
+		class ReservationSummary implements IReservationSummary {
+			id: string;
+			price: number;
+
+			constructor(id: string, price: number) {
+				this.id = id;
+				this.price = price;
+			}
+		}
+
+		const reservation: IReservationSummary = new ReservationSummary('some id', 123456);
+		return reservation;
 	}
 
 	async getFlightsAvailable(departure: IAirportIdentifier, arrival: IAirportIdentifier, depart: number): Promise<IFlightSummary[]> {
