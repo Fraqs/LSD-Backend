@@ -6,7 +6,7 @@
 	"dependencies": {
 		"@node-rpc/server": "^2.2.0",
 		"co-body": "^6.1.0",
-		"contract": "Fraqs/LSD-Contract",
+		"contract": "Fraqs/LSD-Project.Contract",
 		"express": "^4.17.1",
 		"moment-timezone": "^0.5.31",
 		"ts-node": "^9.0.0",

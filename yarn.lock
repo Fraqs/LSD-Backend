@@ -1759,11 +1759,10 @@ content-type@~1.0.4:
   resolved "https://registry.yarnpkg.com/content-type/-/content-type-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
   integrity sha512-hIP3EEPs8tB9AT1L+NUqtwOAps4mk2Zob89MWXMHjHWg9milF/j4osnnQLXBCBFBk/tvIG/tUc9mOUJiPBhPXA==
 
-contract@Fraqs/LSD-Contract:
+contract@Fraqs/LSD-Project.Contract:
   version "1.0.0"
-  resolved "https://codeload.github.com/Fraqs/LSD-Contract/tar.gz/0556dadb5677336c01555c2e960f1acc41f73422"
+  resolved "https://codeload.github.com/Fraqs/LSD-Project.Contract/tar.gz/72b8ae9fd0babfee3db2f22dc231a233e9c6e3c6"
   dependencies:
-    moment-timezone "^0.5.31"
     typescript "^4.0.5"
 
 convert-source-map@^1.4.0, convert-source-map@^1.6.0, convert-source-map@^1.7.0:
