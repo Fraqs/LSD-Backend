@@ -28,6 +28,12 @@ _Large System Development, fall 2020_
 
 [toc]
 
+## Components
+
+-   [Backend](https://github.com/Fraqs/LSD-Project.Backend), Handles Database Management.
+-   [Frontend](https://github.com/Fraqs/LSD-Project.Frontend), Handles REST API and Server Sided Rendering.
+-   [Contract](https://github.com/Fraqs/LSD-Project.Contract), Handles Contract Interface & Data Transfer Objects.
+
 ## {ignore=true}
 
 Software Development @ Copenhagen Business Academy, Denmark 2020
