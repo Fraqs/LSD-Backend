@@ -32,9 +32,12 @@ async function RPCRequestHandler(req: http.IncomingMessage, res: http.ServerResp
 		const result = await RPCServer.handleAPIRequest(req, { lang: 'en' });
 		const json: string = String(JSON.stringify(result));
 		res.write(json);
-	} catch (error) {
-		console.log(error.message);
-		res.write('error');
+	} catch (error: any) {
+		console.error(error.message);
+
+		// handle errors
+		res.writeHead(500); // https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+		res.write(error.json());
 	}
 
 	res.end();
