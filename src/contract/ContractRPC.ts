@@ -7,6 +7,7 @@ import { jsonDeserializer as deserializer } from '@node-rpc/server/dist/deserial
 import IContract from 'contract';
 import Contract from './Contract';
 
+// ...
 const contract: IContract = new Contract();
 
 // ...
