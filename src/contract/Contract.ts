@@ -1,12 +1,12 @@
 // classes, interfaces & functions
 import IContract from 'contract';
-import { IReservationDetail, IReservationSummary } from 'contract/src/dto/reservation';
-import { IFlightIdentifier, IFlightSummary } from 'contract/src/dto/flight';
-import { ICarrierDetail } from 'contract/src/dto/carrier';
-import { IBookingDetail, IBookingIdentifier } from 'contract/src/dto/booking';
-import { IAirportDetail, IAirportIdentifier } from 'contract/src/dto/airport';
+import { ReservationDetail, ReservationSummary } from 'contract/dist/dto/reservation';
+import { FlightIdentifier, FlightSummary } from 'contract/dist/dto/flight';
+import { CarrierDetail } from 'contract/dist/dto/carrier';
+import { BookingDetail, BookingIdentifier } from 'contract/dist/dto/booking';
+import { AirportDetail, AirportIdentifier } from 'contract/dist/dto/airport';
 
-// import { NotFoundError } from 'contract/src/eto/';
+import { NotFoundError, InvalidInputError, InconsistentLengthError } from 'contract/dist/eto/';
 
 class EError extends Error {
 	type: string;
@@ -26,40 +26,30 @@ class EError extends Error {
 }
 
 export default class Contract implements IContract {
-	async reserveFlight(id: IFlightIdentifier, amountSeats: number): Promise<IReservationSummary> {
-		// hardcoded example
-		// throw new EError('some error');
-		// const _id = new CarrierDetail('', '');
-		// throw new NotFoundError('abcdefghij');
-		// throw new Error('not implemented yet.');
-		// const reservation = new ReservationSummary('some id', 123456);
-		// return reservation;
+	async getCarrierInformation(iata: string): Promise<CarrierDetail> {
+		throw new Error('Method not implemented.');
+	}
+	async getAirportInformation(iata: string): Promise<AirportDetail> {
+		throw new Error('Method not implemented.');
+	}
+	async getFlightsAvailable(departure: AirportIdentifier, arrival: AirportIdentifier, depart: number): Promise<FlightSummary[]> {
+		throw new Error('Method not implemented.');
+	}
 
-		const reservation: IReservationSummary = { id: '', price: 213 };
+	// hardcoded example
+	async reserveFlight(id: FlightIdentifier, amountSeats: number): Promise<ReservationSummary> {
+		const reservation = new ReservationSummary('some id', 123456);
 		return reservation;
 	}
 
-	async getFlightsAvailable(departure: IAirportIdentifier, arrival: IAirportIdentifier, depart: number): Promise<IFlightSummary[]> {
-		throw new Error('not implemented yet.');
+	async createBooking(reservationDetails: ReservationDetail[], creditCardNumber: number, frequentFlyerNumber?: number): Promise<BookingDetail> {
+		throw new Error('Method not implemented.');
 	}
 
-	async getCarrierInformation(iata: string): Promise<ICarrierDetail> {
-		throw new Error('not implemented yet.');
+	async getBooking(id: BookingIdentifier): Promise<BookingDetail> {
+		throw new Error('Method not implemented.');
 	}
-
-	async getAirportInformation(iata: string): Promise<IAirportDetail> {
-		throw new Error('not implemented yet.');
-	}
-
-	async getBooking(id: IBookingIdentifier): Promise<IBookingDetail> {
-		throw new Error('not implemented yet.');
-	}
-
-	async createBooking(reservationDetails: IReservationDetail[], creditCardNumber: number, frequentFlyerNumber?: number): Promise<IBookingDetail> {
-		throw new Error('not implemented yet.');
-	}
-
-	async cancelBooking(id: IBookingIdentifier): Promise<void> {
-		throw new Error('not implemented yet.');
+	async cancelBooking(id: BookingIdentifier): Promise<void> {
+		throw new Error('Method not implemented.');
 	}
 }
