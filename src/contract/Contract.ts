@@ -6,6 +6,8 @@ import { ICarrierDetail } from 'contract/src/dto/carrier';
 import { IBookingDetail, IBookingIdentifier } from 'contract/src/dto/booking';
 import { IAirportDetail, IAirportIdentifier } from 'contract/src/dto/airport';
 
+// import { NotFoundError } from 'contract/src/eto/';
+
 class EError extends Error {
 	type: string;
 
@@ -26,21 +28,14 @@ class EError extends Error {
 export default class Contract implements IContract {
 	async reserveFlight(id: IFlightIdentifier, amountSeats: number): Promise<IReservationSummary> {
 		// hardcoded example
-
 		// throw new EError('some error');
+		// const _id = new CarrierDetail('', '');
+		// throw new NotFoundError('abcdefghij');
+		// throw new Error('not implemented yet.');
+		// const reservation = new ReservationSummary('some id', 123456);
+		// return reservation;
 
-		// DTO Should be classes instead of interfaces due to this...
-		class ReservationSummary implements IReservationSummary {
-			id: string;
-			price: number;
-
-			constructor(id: string, price: number) {
-				this.id = id;
-				this.price = price;
-			}
-		}
-
-		const reservation: IReservationSummary = new ReservationSummary('some id', 123456);
+		const reservation: IReservationSummary = { id: '', price: 213 };
 		return reservation;
 	}
 
